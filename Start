@@ -1,0 +1,13 @@
+# Dictionary Comprehension
+# In this example, we are putting the random number against each name in the list using dictionary comprehension
+names = ["Alex", "Beth", "Caroline", "Dave", "Eleanor", "Freddie"]
+import random
+import pandas as pd
+
+student_scores = {student: random.randint(1, 100) for student in names}
+student_scores_df = pd.DataFrame(student_scores.items(), columns=["Name", "Score"])
+print(student_scores_df)
+
+# Here we are checking if the student get score greater than and equal to 60.
+passed_student = {student: score for (student, score) in student_scores.items() if score >= 60}
+print(passed_student)
