@@ -11,3 +11,34 @@ print(student_scores_df)
 # Here we are checking if the student get score greater than and equal to 60.
 passed_student = {student: score for (student, score) in student_scores.items() if score >= 60}
 print(passed_student)
+
+# In this example, we will count the length of alphabet in the sentence we provide and then saving it into a new dictionary.
+
+names = "what is the airspeed velocity of an unladen swallow?"
+split_name = names.split()
+
+print(split_name)
+
+for name in split_name:
+    print(len(name))
+
+name_length = {name: len(name) for name in split_name}
+name_length_df = pd.DataFrame(name_length.items(), columns=["Name", "Count"])
+print(name_length_df)
+
+
+# In this example we have one dictionary with key and value. From the value we convert the value from the Celsius into Fahrenheit.
+
+weather_c = {
+    "Monday": 12,
+    "Tuesday": 14,
+    "Wednesday": 15,
+    "Thursday": 14,
+    "Friday": 21,
+    "Saturday": 22,
+    "Sunday": 24,
+}
+
+convert_number = {days: (number * 9 / 5) + 32 for (days, number) in weather_c.items()}
+convert_number_df = pd.DataFrame(convert_number.items(), columns= ["Days", "Temperature(F)"])
+print(convert_number_df)
